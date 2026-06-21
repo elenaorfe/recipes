@@ -7,6 +7,7 @@ import RecipeListSkeleton from "./RecipeListSkeleton";
 import ErrorComponent from "./ErrorComponent";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
+import ImageComponent from "./ImageComponent";
 
 interface RecipeImage {
   title: string;
@@ -87,10 +88,12 @@ const RecipeList: React.FC = () => {
                   </h2>
                 </div>
                 {recipe.image && (
-                  <img
+                  <ImageComponent
                     src={recipe.image.url}
                     alt={recipe.name}
                     className="my-auto w-18 h-18"
+                    sizes="(max-width: 768px) 48px, 72px"
+                    srcSet={`${recipe.image.url}?w=48 48w, ${recipe.image.url}?w=72 72w, ${recipe.image.url}?w=96 96w`}
                   />
                 )}
               </div>

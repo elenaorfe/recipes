@@ -7,6 +7,7 @@ import RecipeViewSkeleton from "./RecipeViewSkeleton";
 import ErrorComponent from "./ErrorComponent";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
+import ImageComponent from "./ImageComponent";
 
 interface Ingredient {
   name: string;
@@ -88,10 +89,12 @@ const RecipeView: React.FC = () => {
   return (
     <PageLayout showBackLink>
       {recipe.image && (
-        <img
+        <ImageComponent
           src={recipe.image.url}
           alt={recipe.name}
           className="w-48 h-48 mx-auto"
+          sizes="(max-width: 768px) 192px, 384px"
+          srcSet={`${recipe.image.url}?w=192 192w, ${recipe.image.url}?w=384 384w, ${recipe.image.url}?w=512 512w`}
         />
       )}
       <div className="bg-white rounded-xl shadow-md overflow-hidden mb-6">
