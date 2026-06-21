@@ -75,6 +75,9 @@ const RecipeList: React.FC = () => {
             to={`/recipe/${recipe.slug}`}
             key={recipe.slug}
             className="block"
+            aria-label={t("recipes.view_recipe", {
+              recipeName: recipe.name,
+            })}
           >
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full flex flex-col">
               <div className="flex gap-4 p-4 grow">

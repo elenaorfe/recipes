@@ -1,5 +1,5 @@
 {
-  "recipes.title": "Recetas",
+  "language_switcher.label": "Seleccionar idioma",
   "recipe.action.back": "Volver a recetas",
   "recipe.duration": "Duración",
   "recipe.error.generic": "Error",
@@ -7,5 +7,7 @@
   "recipe.hours": "horas",
   "recipe.ingredients": "Ingredientes",
   "recipe.people": "Personas",
-  "recipe.steps": "Pasos"
+  "recipe.steps": "Pasos",
+  "recipes.title": "Recetas",
+  "recipes.view_recipe": "Ver receta: {{recipeName}}"
 }
