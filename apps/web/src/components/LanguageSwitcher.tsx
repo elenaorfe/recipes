@@ -13,6 +13,7 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <select
+      id="language-switcher"
       value={language}
       onChange={(e) => handleLanguageChange(e.target.value)}
       className="px-2 rounded-md text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 cursor-pointer border border-gray-300"
