@@ -82,11 +82,6 @@ const RecipeList: React.FC = () => {
           >
             <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full flex flex-col">
               <div className="flex gap-4 p-4 grow">
-                <div className="flex flex-col gap-2 grow justify-between">
-                  <h2 className="text-lg font-bold text-gray-900">
-                    {recipe.name}
-                  </h2>
-                </div>
                 {recipe.image && (
                   <ImageComponent
                     src={recipe.image.url}
@@ -96,6 +91,11 @@ const RecipeList: React.FC = () => {
                     srcSet={`${recipe.image.url}?w=48 48w, ${recipe.image.url}?w=72 72w, ${recipe.image.url}?w=96 96w`}
                   />
                 )}
+                <div className="flex flex-col gap-2 grow justify-between">
+                  <h2 className="font-bold text-gray-900 my-auto">
+                    {recipe.name}
+                  </h2>
+                </div>
               </div>
             </div>
           </Link>
