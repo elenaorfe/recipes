@@ -45,7 +45,7 @@ This is a monorepo structure using pnpm workspaces:
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:elenaorfe/recipes.git
 ```
 
 2. Install dependencies:
