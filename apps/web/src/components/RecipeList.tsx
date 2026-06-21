@@ -19,6 +19,14 @@ interface Recipe {
   slug: string;
 }
 
+interface RecipeCollection {
+  items: Recipe[];
+}
+
+interface QueryData {
+  recipeCollection: RecipeCollection;
+}
+
 const GET_RECIPES = gql`
   query ($locale: String) {
     recipeCollection(locale: $locale, order: [name_ASC]) {
@@ -36,11 +44,11 @@ const GET_RECIPES = gql`
 
 const RecipeList: React.FC = () => {
   const { t } = useTranslation();
-  const { data, loading, error } = useQuery(GET_RECIPES, {
+  const { data, loading, error } = useQuery<QueryData>(GET_RECIPES, {
     variables: { locale: i18n.language, preview: false },
   });
 
-  const recipes: Recipe[] = data?.recipeCollection?.items;
+  const recipes: Recipe[] = data?.recipeCollection?.items || [];
   const header = <h1 className="text-3xl">{t("recipes.title")}</h1>;
 
   if (loading) {

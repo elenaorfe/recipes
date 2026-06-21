@@ -8,6 +8,11 @@ import ErrorComponent from "./ErrorComponent";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
+interface Ingredient {
+  name: string;
+  amount: number;
+}
+
 interface Direction {
   description: string;
 }
@@ -19,8 +24,16 @@ interface Recipe {
     title: string;
     url: string;
   };
-  ingredients: string[];
+  ingredients: Ingredient[];
   directions: Direction[];
+}
+
+interface RecipeCollection {
+  items: Recipe[];
+}
+
+interface QueryData {
+  recipeCollection: RecipeCollection;
 }
 
 const GET_RECIPE = gql`
@@ -44,7 +57,7 @@ const RecipeView: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const { data, loading, error } = useQuery(GET_RECIPE, {
+  const { data, loading, error } = useQuery<QueryData>(GET_RECIPE, {
     variables: { slug, locale: i18n.language, preview: false },
   });
 
@@ -62,7 +75,7 @@ const RecipeView: React.FC = () => {
       </PageLayout>
     );
 
-  const recipe: Recipe = data?.recipeCollection?.items?.[0];
+  const recipe: Recipe | null = data?.recipeCollection?.items?.[0] || null;
 
   if (!recipe) {
     return (
