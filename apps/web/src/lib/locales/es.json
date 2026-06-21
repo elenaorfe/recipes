@@ -1,0 +1,11 @@
+{
+  "recipes.title": "Recetas",
+  "recipe.action.back": "Volver a recetas",
+  "recipe.duration": "Duración",
+  "recipe.error.generic": "Error",
+  "recipe.error.not_found": "Receta no encontrada",
+  "recipe.hours": "horas",
+  "recipe.ingredients": "Ingredientes",
+  "recipe.people": "Personas",
+  "recipe.steps": "Pasos"
+}

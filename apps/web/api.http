@@ -1,0 +1,27 @@
+### GET Recipes
+GRAPHQL {{GRAPHQL_URL}}
+Authorization: {{GRAPHQL_API_KEY}}
+
+query($preview: Boolean){
+    recipeCollection(preview: $preview){
+        items{
+            name
+        }
+      }
+}
+
+### GET Recipe
+GRAPHQL {{GRAPHQL_URL}}
+Authorization: {{GRAPHQL_API_KEY}}
+
+query GetRecipe($slug: String!, $preview: Boolean) {
+    recipeCollection(where: { slug: $slug }, limit: 1, preview: $preview) {
+        items {
+            name
+        }
+    }
+}
+
+{
+  "$slug": "cuscus"
+}

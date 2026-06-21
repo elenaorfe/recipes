@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# System files
+.DS_STore
+Thumbs.db
